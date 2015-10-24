@@ -1,0 +1,30 @@
+# Login
+
+# Use a non-default port to avoid brute-force attempts.
+# This will at least keep your log-files clean.
+Port <REPLACE>
+
+PermitRootLogin no
+AllowUsers <REPLACE> # Use a non-default user to avoid brute-force attempts.
+
+LoginGraceTime  30s
+StrictModes     yes
+
+MaxAuthTries    3
+MaxSessions     5
+
+# Authentication methods
+
+# CAUTION: Make sure that a newly configured authentication method works prior
+# to disable another one -- otherwise you get locked-out from your server.
+
+# Use Pubkey-based authentication...
+PubkeyAuthentication   yes
+AuthorizedKeysFile     <REPLACE>
+
+# ...instead of password-based authentication.
+PasswordAuthentication no
+
+# Miscellaneous
+
+X11Forwarding no
